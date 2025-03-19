@@ -1,5 +1,18 @@
 {
-    "tasks": [
-        { "id": 1, "name": "Advanced Mathematics Final", "dueDate": "2025-03-25", "priority": "high", "hours": 8 }
-    ]
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Advanced Mathematics Final",
+      "dueDate": "2025-03-25",
+      "priority": "high",
+      "hours": 8
+    },
+    {
+      "name": "SRM11A1 Wireframes submission",
+      "dueDate": "2025-03-21",
+      "priority": "high",
+      "hours": 2,
+      "id": 2
+    }
+  ]
 }

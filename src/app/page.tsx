@@ -8,8 +8,6 @@ import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import * as data from "./../data/tasks.json";
-import fs from 'fs';
-import path from 'path';
 
 export default function Home() {
   const [tasks, setTasks] = useState(data.tasks);
@@ -37,17 +35,30 @@ export default function Home() {
     ));
   };
 
-  const addNewTask = () => {
+  const addNewTask = async () => {
     if (newTask.name && newTask.dueDate) {
-        const updatedTasks = [...tasks, { ...newTask, id: tasks.length + 1 }];
-        setTasks(updatedTasks);
+      try {
+        const response = await fetch('/api/saveTask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newTask),
+        });
+  
+        if (!response.ok) throw new Error('Failed to save task');
+  
+        const data = await response.json();
+        setTasks(data.tasks);
         setShowAddTask(false);
         setNewTask({ name: '', dueDate: '', priority: 'medium', hours: 0 });
-
-        const filePath = path.resolve('./src/data/tasks.json');
-        fs.writeFileSync(filePath, JSON.stringify({ tasks: updatedTasks }, null, 2));
+      } catch (error) {
+        console.error('Error:', error);
       }
+    }
   };
+  
+  
+
+
   return (
     <div className="min-h-screen bg-gray-50">
       <nav className="bg-white shadow-sm h-16 flex items-center px-6">
@@ -118,8 +129,8 @@ export default function Home() {
             <div className="space-y-4">
               {tasks.map(task => (
                 <div key={task.id} className={`p-4 rounded-lg border ${task.priority === 'high' ? 'border-red-200 bg-red-50' :
-                    task.priority === 'medium' ? 'border-yellow-200 bg-yellow-50' :
-                      'border-green-200 bg-green-50'
+                  task.priority === 'medium' ? 'border-yellow-200 bg-yellow-50' :
+                    'border-green-200 bg-green-50'
                   }`}>
                   <div className="flex justify-between items-center">
                     <div>
