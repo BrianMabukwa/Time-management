@@ -182,8 +182,8 @@ export default function Home() {
           <Card className="p-6">
             <h2 className="text-xl font-semibold mb-4">Daily Motivation</h2>
             <div className="mb-6">
-              <p className="text-lg italic mb-2">"{motivationalQuote.text}"</p>
-              <p className="text-sm text-gray-600">- {motivationalQuote.author}</p>
+              <p className="text-lg italic mb-2">{motivationalQuote.text}</p>
+              <p className="text-sm text-gray-600">{motivationalQuote.author}</p>
             </div>
             <Separator className="my-4" />
             <h3 className="font-semibold mb-2">{studyTip.title}</h3>
