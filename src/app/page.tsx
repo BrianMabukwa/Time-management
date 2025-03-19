@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import * as data from "./../data/tasks.json";
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   const [tasks, setTasks] = useState(data.tasks);
@@ -24,6 +25,16 @@ export default function Home() {
   const [focusMode, setFocusMode] = useState(false);
   const [showAddTask, setShowAddTask] = useState(false);
   const [newTask, setNewTask] = useState({ name: '', dueDate: '', priority: 'medium', hours: 0 });
+
+  const motivationalQuote = {
+    text: "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    author: "Winston Churchill"
+  };
+
+  const studyTip = {
+    title: "The Pomodoro Technique",
+    content: "Break your study sessions into 25-minute focused intervals, followed by 5-minute breaks. This helps maintain concentration and prevents mental fatigue."
+  };
 
   const toggleFocusMode = () => {
     setFocusMode(!focusMode);
@@ -43,9 +54,9 @@ export default function Home() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(newTask),
         });
-  
+
         if (!response.ok) throw new Error('Failed to save task');
-  
+
         const data = await response.json();
         setTasks(data.tasks);
         setShowAddTask(false);
@@ -55,8 +66,8 @@ export default function Home() {
       }
     }
   };
-  
-  
+
+
 
 
   return (
@@ -166,6 +177,17 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </Card>
+
+          <Card className="p-6">
+            <h2 className="text-xl font-semibold mb-4">Daily Motivation</h2>
+            <div className="mb-6">
+              <p className="text-lg italic mb-2">"{motivationalQuote.text}"</p>
+              <p className="text-sm text-gray-600">- {motivationalQuote.author}</p>
+            </div>
+            <Separator className="my-4" />
+            <h3 className="font-semibold mb-2">{studyTip.title}</h3>
+            <p className="text-sm text-gray-600">{studyTip.content}</p>
           </Card>
         </div>
       </div>
