@@ -13,6 +13,13 @@
       "priority": "high",
       "hours": 2,
       "id": 2
+    },
+    {
+      "name": "testing error handling",
+      "dueDate": "2025-03-19",
+      "priority": "high",
+      "hours": 1,
+      "id": 3
     }
   ]
 }

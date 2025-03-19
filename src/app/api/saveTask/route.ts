@@ -23,7 +23,12 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true, tasks: data.tasks });
   } catch (error) {
-    return NextResponse.json({ success: false, message: 'Failed to save task', error: error.message }, { status: 500 });
+    // Type assertion to narrow the error type
+    if (error instanceof Error) {
+      return NextResponse.json({ success: false, message: 'Failed to save task', error: error.message }, { status: 500 });
+    } else {
+      return NextResponse.json({ success: false, message: 'An unknown error occurred', error: 'Unknown' }, { status: 500 });
+    }
   }
 }
 
