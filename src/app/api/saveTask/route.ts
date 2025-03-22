@@ -1,14 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
-
-interface Task {
-  id: number;
-  name: string;
-  dueDate: string;
-  priority: 'high' | 'medium' | 'low';
-  hours: number;
-}
+import { Task } from '@/lib/utils';
 
 export async function POST(req: NextRequest) {
   try {
@@ -17,10 +10,16 @@ export async function POST(req: NextRequest) {
     const data: { tasks: Task[] } = JSON.parse(fileData);
 
     const newTask: Task = await req.json();
-    data.tasks.push({ ...newTask, id: data.tasks.length + 1 });
-
+    if (newTask.id) {
+      const existingTask = data.tasks.find(task => task.id === newTask.id);
+      if (!existingTask) {
+        return NextResponse.json({ success: false, message: 'Task not found' }, { status: 404 });
+      }
+      Object.assign(existingTask, newTask);
+    }else{
+      data.tasks.push({ ...newTask, id: data.tasks.length + 1 });
+    }
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-
     return NextResponse.json({ success: true, tasks: data.tasks });
   } catch (error) {
     // Type assertion to narrow the error type
