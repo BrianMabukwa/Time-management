@@ -5,7 +5,7 @@ import { Task } from '@/lib/utils';
 
 export async function POST(req: NextRequest) {
   try {
-    const filePath = path.join(process.cwd(), 'src/data/tasks.json');
+    const filePath = path.join(process.cwd(), 'src/data/db.json');
     const fileData = fs.readFileSync(filePath, 'utf-8');
     const data: { tasks: Task[] } = JSON.parse(fileData);
 
