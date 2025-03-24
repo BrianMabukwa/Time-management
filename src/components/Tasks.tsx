@@ -105,7 +105,7 @@ const Tasks: React.FC = () => {
                       onChange={(e) => setNewTask({ ...newTask, hours: parseInt(e.target.value) })}
                       />
                     </div>
-                    <Button onClick={saveTaskData} className="w-full !rounded-button">Add Task</Button>
+                    <Button onClick={saveTaskData} className="w-full !rounded-button">{ newTask.id === null ? "Add" : "Update" } Task</Button>
                   </div>
                 </DialogContent>
               </Dialog>
