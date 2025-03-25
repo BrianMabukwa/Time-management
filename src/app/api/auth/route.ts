@@ -65,6 +65,7 @@ async function handleLogin(userData: User, users: User[]) {
   
   // Don't return the password in the response
   const { password: _, ...userWithoutPassword } = user;
+  console.log(password);
   
   // Set JWT as HTTP-only cookie and return user data
   const response = NextResponse.json({

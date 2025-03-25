@@ -28,8 +28,9 @@ export default function Home() {
       console.log(user);
 
       if (typeof window != "undefined") {
-        localStorage.setItem('userId', user.userId);
+        localStorage.setItem('user', user.userId);
         console.log('User:', user.userId);
+        // window.location.href = '/';
       }
     } catch (error) {
       console.error('Error:', error);
