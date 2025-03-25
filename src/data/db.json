@@ -2,11 +2,45 @@
   "users": [
     {
       "userId": 1,
-      "firstName": "John",
-      "lastName": "Doe",
+      "fullName": "John",
       "email": "john@mail.com",
       "password": "P@ssw0rd",
       "createdAt": "2025-03-19T00:00:00.000Z"
+    },
+    {
+      "email": "mabukwabt@gmail.com",
+      "password": "123ewds",
+      "fname": "Brian",
+      "userId": 2,
+      "dateCreated": "2025-03-25T16:40:11.672Z"
+    },
+    {
+      "email": "220030076@student.uj.ac.za",
+      "password": "43242",
+      "fname": "Brian",
+      "userId": 3,
+      "dateCreated": "2025-03-25T17:02:16.464Z"
+    },
+    {
+      "email": "mabukwa24@gmail.com",
+      "password": "wfdsdf",
+      "fname": "Brian",
+      "userId": 4,
+      "dateCreated": "2025-03-25T17:03:59.584Z"
+    },
+    {
+      "email": "mabukwa25@gmail.com",
+      "password": "12345",
+      "fname": "Brian Mabukwa",
+      "userId": 5,
+      "dateCreated": "2025-03-25T17:18:46.446Z"
+    },
+    {
+      "email": "mabukwatakunda@gmail.com",
+      "password": "54321",
+      "fname": "Brian Mabukwa",
+      "userId": 6,
+      "dateCreated": "2025-03-25T18:02:59.162Z"
     }
   ],
   "tasks": [
@@ -19,20 +53,36 @@
       "hours": 8
     },
     {
-      "name": "SRM11A1 Wireframes submission",
-      "user": 1,
-      "dueDate": "2025-03-21",
+      "id": 2,
+      "user": 5,
+      "name": "Test",
+      "dueDate": "2025-03-27",
       "priority": "high",
-      "hours": 2,
-      "id": 2
+      "hours": 1
     },
     {
-      "name": "testing error handling",
-      "user": 1,
-      "dueDate": "2025-03-19",
+      "id": 3,
+      "user": 5,
+      "name": "test 2.0",
+      "dueDate": "2025-03-29",
       "priority": "high",
-      "hours": 1,
-      "id": 3
+      "hours": 2
+    },
+    {
+      "id": 4,
+      "user": 6,
+      "name": "Test",
+      "dueDate": "2025-03-26",
+      "priority": "medium",
+      "hours": 2
+    },
+    {
+      "id": 5,
+      "user": 6,
+      "name": "Test again",
+      "dueDate": "2025-03-26",
+      "priority": "high",
+      "hours": 1
     }
   ]
 }

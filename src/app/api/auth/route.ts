@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 import { User } from '@/lib/utils';
-import { SignJWT } from 'jose';
+// import { SignJWT } from 'jose';
 
 export async function POST(req: NextRequest) {
   try {
@@ -53,22 +53,15 @@ async function handleLogin(userData: User, users: User[]) {
     }, { status: 401 });
   }
   
-  const secret = new TextEncoder().encode(process.env.JWT_SECRET);
-  if(!secret) {
-    return NextResponse.json({ 
-      success: false, 
-      message: 'JWT secret not found' 
-    }, { status: 500 });
-  }
 
-  const token = await new SignJWT({ 
-    userId: user.userId,
-    email: user.email
-  })
-    .setProtectedHeader({ alg: 'HS256' })
-    .setIssuedAt()
-    .setExpirationTime('2h')
-    .sign(secret);
+  // const token = await new SignJWT({ 
+  //   userId: user.userId,
+  //   email: user.email
+  // })
+  //   .setProtectedHeader({ alg: 'HS256' })
+  //   .setIssuedAt()
+  //   .setExpirationTime('2h')
+  //   .sign(secret);
   
   // Don't return the password in the response
   const { password: _, ...userWithoutPassword } = user;
@@ -78,15 +71,6 @@ async function handleLogin(userData: User, users: User[]) {
     success: true,
     message: 'Login successful',
     user: userWithoutPassword
-  });
-  
-  response.cookies.set({
-    name: 'auth-token',
-    value: token,
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    maxAge: 60 * 60 * 2,
-    path: '/'
   });
   
   return response;
