@@ -98,12 +98,12 @@ function handleRegister(userData: User, data: { users: User[] }, filePath: strin
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
   
   // Don't return the password in the response
-  const { password, ...userWithoutPassword } = newUser;
+  // const { , ...userWithoutPassword } = newUser;
   
   return NextResponse.json({ 
     success: true, 
     message: 'Registration successful',
-    user: userWithoutPassword
+    user: newUser
   });
 }
 

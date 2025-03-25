@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 
 const Navigation: React.FC = () => {
@@ -7,11 +8,11 @@ const Navigation: React.FC = () => {
         setFocusMode(!focusMode);
     };
     return (
-        <nav className="bg-white shadow-sm h-16 flex items-center px-6">
-        <h1 className="text-2xl font-bold text-black-700">BookWorm</h1>
-        <div className="ml-auto flex items-center space-x-4">
+        <nav className="flex items-center bg-white shadow-sm px-6 h-16">
+        <h1 className="font-bold text-black-700 text-2xl">BookWorm</h1>
+        <div className="flex items-center space-x-4 ml-auto">
           <div className="flex items-center space-x-2">
-            <span className="text-sm font-medium">Focus Mode</span>
+            <span className="font-medium text-sm">Focus Mode</span>
             <Switch
               checked={focusMode}
               onCheckedChange={toggleFocusMode}
