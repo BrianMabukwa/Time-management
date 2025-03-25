@@ -41,12 +41,12 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-center px-6 lg:px-8 py-12 min-h-full">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h1 className="mx-auto w-auto font-bold text-gray-900 text-2xl/9 text-center text-center tracking-tight">BookWorm</h1>
-        <h2 className="mt-10 font-bold text-gray-900 text-2xl/9 text-center tracking-tight">Sign up</h2>
+        <h1 className="mx-auto w-auto font-bold text-blue-900 text-2xl/9 text-center text-center tracking-tight">BookWorm</h1>
+        <h2 className="mt-4 font-bold text-gray-900 text-2xl/9 text-center tracking-tight">Sign up</h2>
       </div>
 
 
-      <div className="sm:mx-auto mt-10 sm:w-full sm:max-w-sm">
+      <div className="sm:mx-auto mt-5 sm:w-full sm:max-w-sm">
         <form className="space-y-6" action="#" method="POST">
           <div>
             <label htmlFor="email" className="block font-medium text-gray-900 text-sm/6">Email address</label>
@@ -75,10 +75,9 @@ export default function Home() {
         </form>
 
         <p className="mt-10 text-gray-500 text-sm/6 text-center">
-          Not a member?
+          Already have an account?{' '}
           <Link href="/Login">
             <span className="font-semibold text-indigo-600 hover:text-indigo-500">Sign in</span>
-            {/* <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">Sign in</a> */}
           </Link>
         </p>
       </div>

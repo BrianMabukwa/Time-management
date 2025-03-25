@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from 'next/navigation';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 
@@ -10,12 +10,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const router = useRouter();
 
-  useEffect(() => {
-    const userId = localStorage.getItem("userId");
-    if (!userId) {
-      router.push("/Login"); 
-    }
-  })
+
 
 
 
@@ -57,7 +52,7 @@ export default function Login() {
   return (
     <div className="flex flex-col justify-center px-6 lg:px-8 py-12 min-h-full">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h1 className="mx-auto w-auto font-bold text-gray-900 text-2xl/9 text-center text-center tracking-tight">BookWorm</h1>
+        <h1 className="mx-auto w-auto font-bold text-blue-900 text-2xl/9 text-center text-center tracking-tight">BookWorm</h1>
         <h2 className="mt-10 font-bold text-gray-900 text-2xl/9 text-center tracking-tight">Sign In</h2>
       </div>
 
@@ -85,7 +80,7 @@ export default function Login() {
         </form>
 
         <p className="mt-10 text-gray-500 text-sm/6 text-center">
-          Not a member?
+          Don't have an account?
           <Link href="/">
             <span className="font-semibold text-indigo-600 hover:text-indigo-500"> Sign up</span>
           </Link>
