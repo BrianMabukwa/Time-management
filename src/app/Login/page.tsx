@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 
@@ -10,41 +10,48 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const router = useRouter();
 
-  
+  useEffect(() => {
+    const userId = localStorage.getItem("userId");
+    if (!userId) {
+      router.push("/Login"); 
+    }
+  })
+
+
 
   const handleRegister = async (e: React.FormEvent) => {
-    e.preventDefault(); 
-  
+    e.preventDefault();
+
     const newUser = {
       email: email,
       password: password,
       action: 'login'
     };
-  
+
     try {
       const response = await fetch('/api/auth', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newUser),
       });
-  
+
       const user = await response.json();
       if (!response.ok || !user.success) {
         throw new Error(user.message || 'Failed to authenticate');
       }
-  
+
       if (typeof window !== 'undefined') {
-        localStorage.setItem('userId', user.user.userId); 
+        localStorage.setItem('userId', user.user.userId);
       }
-  
+
       console.log('User logged in:', user);
       router.push('/Tasks');
-  
+
     } catch (error) {
       console.error('Error:', error);
     }
   };
-  
+
 
 
   return (

@@ -32,7 +32,7 @@ const Tasks: React.FC = () => {
 
     const [newTask, setNewTask] = useState<Task>({
         id: null,
-        user: userId || 1,
+        user: userId || 1,  
         name: '',
         dueDate: '',
         priority: 'medium',
