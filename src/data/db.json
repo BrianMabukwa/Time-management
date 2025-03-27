@@ -22,13 +22,6 @@
       "dateCreated": "2025-03-25T17:02:16.464Z"
     },
     {
-      "email": "mabukwa24@gmail.com",
-      "password": "wfdsdf",
-      "fname": "Brian",
-      "userId": 4,
-      "dateCreated": "2025-03-25T17:03:59.584Z"
-    },
-    {
       "email": "mabukwa25@gmail.com",
       "password": "12345",
       "fname": "Brian Mabukwa",
@@ -41,6 +34,83 @@
       "fname": "Brian Mabukwa",
       "userId": 6,
       "dateCreated": "2025-03-25T18:02:59.162Z"
+    },
+    {
+      "email": "mabukwa24@gmail.com",
+      "password": "12345",
+      "fname": "Brian Mabukwa",
+      "userId": 6,
+      "dateCreated": "2025-03-25T19:19:33.182Z"
+    },
+    {
+      "email": "mabukwa55@gmail.com",
+      "password": "12345",
+      "fname": "Brian",
+      "userId": 7,
+      "dateCreated": "2025-03-25T19:22:14.565Z"
+    },
+    {
+      "email": "mabukwa1@gmail.com",
+      "password": "12345",
+      "fname": "Brian Mabukwa",
+      "userId": 8,
+      "dateCreated": "2025-03-25T19:22:48.344Z"
+    },
+    {
+      "email": "mabukwa58@gmail.com",
+      "password": "12345",
+      "fname": "Brian",
+      "userId": 9,
+      "dateCreated": "2025-03-25T19:23:24.681Z"
+    },
+    {
+      "email": "mabukwa20@gmail.com",
+      "password": "12345",
+      "fname": "Brian Mabukwa",
+      "userId": 10,
+      "dateCreated": "2025-03-25T19:24:47.676Z"
+    },
+    {
+      "email": "mabukwa@gmail.com",
+      "password": "12345",
+      "fname": "Brian Mabukwa",
+      "userId": 11,
+      "dateCreated": "2025-03-25T21:01:27.201Z"
+    },
+    {
+      "email": "mabukwat@gmail.com",
+      "password": "12345",
+      "fname": "Brian Mabukwa",
+      "userId": 12,
+      "dateCreated": "2025-03-25T21:02:44.892Z"
+    },
+    {
+      "email": "mtshali@gmail.com",
+      "password": "12345",
+      "fname": "Thokzin",
+      "userId": 13,
+      "dateCreated": "2025-03-25T21:15:09.586Z"
+    },
+    {
+      "email": "mabukwa111@gmail.com",
+      "password": "12345",
+      "fname": "Brian",
+      "userId": 14,
+      "dateCreated": "2025-03-25T21:17:16.736Z"
+    },
+    {
+      "email": "mabukwa53@gmail.com",
+      "password": "12345",
+      "fname": "Brian",
+      "userId": 15,
+      "dateCreated": "2025-03-25T21:18:31.198Z"
+    },
+    {
+      "email": "mabukwa225@gmail.com",
+      "password": "12345",
+      "fname": "Brian",
+      "userId": 16,
+      "dateCreated": "2025-03-25T21:19:11.487Z"
     }
   ],
   "tasks": [

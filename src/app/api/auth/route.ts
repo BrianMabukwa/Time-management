@@ -64,14 +64,14 @@ async function handleLogin(userData: User, users: User[]) {
   //   .sign(secret);
   
   // Don't return the password in the response
-  // const user;
+  const { password: _, ...userWithoutPassword } = user;
   // console.log(password);
   
   // Set JWT as HTTP-only cookie and return user data
   const response = NextResponse.json({
     success: true,
     message: 'Login successful',
-    user: user
+    user: userWithoutPassword
   });
   
   return response;
@@ -98,12 +98,12 @@ function handleRegister(userData: User, data: { users: User[] }, filePath: strin
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
   
   // Don't return the password in the response
-  // const { , ...userWithoutPassword } = newUser;
+  const { password, ...userWithoutPassword } = newUser;
   
   return NextResponse.json({ 
     success: true, 
     message: 'Registration successful',
-    user: newUser
+    user: userWithoutPassword
   });
 }
 

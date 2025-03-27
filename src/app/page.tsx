@@ -1,11 +1,13 @@
 "use client";
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [fname, setFname] = useState('');
+  const router = useRouter();
 
 
 
@@ -30,7 +32,8 @@ export default function Home() {
       if (typeof window != "undefined") {
         localStorage.setItem('user', user.userId);
         console.log('User:', user.userId);
-        // window.location.href = '/';
+        // router.push('/Login');
+        window.location.href = '/Login';
       }
     } catch (error) {
       console.error('Error:', error);
