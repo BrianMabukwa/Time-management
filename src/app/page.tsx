@@ -64,9 +64,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="flex justify-between items-center">
-              <label htmlFor="password" className="block font-medium text-gray-900 text-sm/6">Password</label>
-            </div>
+            <label htmlFor="password" className="block font-medium text-gray-900 text-sm/6">Password</label>
             <div className="mt-2">
               <input type="password" name="password" id="password" required className="block bg-white px-3 py-1.5 rounded-md outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600 -outline-offset-1 focus:-outline-offset-2 w-full text-gray-900 placeholder:text-gray-400 sm:text-sm/6 text-base" onChange={(e) => setPassword(e.target.value)} />
             </div>
